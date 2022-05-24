@@ -16,6 +16,7 @@ builder.Services.AddDbContext<DataContext>(options =>
 });
 
 builder.Services.AddControllers();
+builder.Services.AddCors();
 
 var app = builder.Build();
 
@@ -27,6 +28,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseRouting();
+
+app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200"));
 
 app.UseAuthorization();
 
