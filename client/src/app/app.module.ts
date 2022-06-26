@@ -8,10 +8,19 @@ import { TestErrorsComponent } from './errors/test-errors/test-errors.component'
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
+import { NavComponent } from './nav/nav.component';
+import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './_modules/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
+    NavComponent,
+    HomeComponent,
+    RegisterComponent,
     TestErrorsComponent,
     NotFoundComponent,
     ServerErrorComponent
@@ -19,8 +28,10 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
-
+    HttpClientModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    SharedModule
   ],
   providers: [
     {
